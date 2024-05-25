@@ -1,14 +1,26 @@
-print("Chương trình chuyển đổi nhiệt độ")
-print("1. Chuyển đổi từ độ C sang độ F")
-print("2. Chuyển đổi từ độ F sang độ C")
-lua_chon = input("Nhập lựa chọn của bạn (1 hoặc 2): ")
-if lua_chon == '1':
-    do_c = float(input("Nhập nhiệt độ trong độ C: "))
-    do_f = (do_c * 9/5) + 32
-    print(f"{do_c} độ C = {do_f} độ F")
-elif lua_chon == '2':
-    do_f = float(input("Nhập nhiệt độ trong độ F: "))
-    do_c = (do_f - 32) * 5/9
-    print(f"{do_f} độ F = {do_c} độ C")
+# Tỷ giá
+ty_gia = {'USD': 25.000,'JPY': 162.000,'PHP': 437.000}
+# Nhập số tiền
+so_tien = float(input("Nhập số tiền cần chuyển đổi: "))
+# Menu lựa chọn loại tiền tệ
+print("Chọn loại tiền tệ cần chuyển đổi:")
+print("1. USD")
+print("2. JPY")
+print("3. PHP")
+lua_chon = int(input("Nhập lựa chọn của bạn (1/2/3): "))
+if lua_chon == 1:
+    tu_tien = 'USD'
+elif lua_chon == 2:
+    tu_tien = 'JPY'
+elif lua_chon == 3:
+    tu_tien = 'PHP'
 else:
-    print("Lựa chọn không hợp lệ. Vui lòng chọn 1 hoặc 2.")
+    print("Lựa chọn không hợp lệ.")
+    exit()
+# Kiểm tra tỷ giá có tồn tại hay không
+if tu_tien in ty_gia:
+    ty_gia_hien_tai = ty_gia[tu_tien]
+    so_tien_vnd = so_tien * ty_gia_hien_tai
+    print(f"{so_tien} {tu_tien} = {so_tien_vnd:.2f} VND")
+else:
+    print("Lựa chọn tiền tệ không hợp lệ.")

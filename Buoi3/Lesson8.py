@@ -12,19 +12,19 @@ while True:
         break
     elif(x < 7):
         value = float(input("Nhập giá trị bạn muốn chuyển đổi: "))
-        print("Giá trị chuyển đổi là", end=" ")
+        print("Giá trị chuyển đổi là : " )
         if x == 1:
-            print(10 * value, "hm")
+            print(value,"km" , "=" , 10 * value, "hm")
         elif x == 2:
-            print(100 * value, "dam")
+            print(value,"km" , "=" ,100 * value, "dam")
         elif x == 3:
-            print(1000 * value, "m")
+            print(value,"km" ,"=" ,1000 * value, "m")
         elif x == 4:
-            print(10 * value, "dam")
+            print(value,"dm","=" ,10 * value, "dam")
         elif x == 5:
-            print(100 * value, "m")
+            print({value},"dm","=",100 * value, "m")
         elif x == 6:
-            print(10 * value, "m")
+            print({value},"dam","=" ,10 * value, "m")
     else:
             print("Lựa chọn không hợp lệ. Vui lòng chọn từ 0 đến 6.")
 

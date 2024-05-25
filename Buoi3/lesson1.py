@@ -1,4 +1,4 @@
-# Nhập hội thoại từ người dùng
+bv# Nhập hội thoại từ người dùng
 print("Người A: Xin chào! Bạn tên là gì?")
 ten_b = input("Người B: ")
 print(f"Người A: Rất vui được gặp bạn, {ten_b}! Bạn có khỏe không?")

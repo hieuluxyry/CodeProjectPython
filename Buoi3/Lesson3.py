@@ -1,13 +1,8 @@
 import math
-
 # Nhập các cạnh của tam giác
 a = int(input("Nhập cạnh a: "))
 b = int(input("Nhập cạnh b: "))
 c = int(input("Nhập cạnh c: "))
-
-# Nhập bán kính của hình tròn
-radius = float(input("Nhập bán kính: "))
-
 # Kiểm tra điều kiện tam giác và tính chu vi, diện tích nếu hợp lệ
 if a + b > c and a + c > b and b + c > a:
     perimeter_triangle = a + b + c
@@ -19,10 +14,14 @@ if a + b > c and a + c > b and b + c > a:
 else:
     print(f"Các cạnh a={a}, b={b}, c={c} không tạo thành tam giác hợp lệ.")
 
-# Tính chu vi và diện tích hình tròn
-circumference_circle = 2 * math.pi * radius
-area_circle = math.pi * radius ** 2
-print(f"Hình tròn có bán kính {radius}:")
-print(f"  Chu vi: {circumference_circle}")
-print(f"  Diện tích: {area_circle}")
-
+# Nhập bán kính của hình tròn và kiểm tra điều kiện
+radius = float(input("Nhập bán kính: "))
+if radius > 0:
+    # Tính chu vi và diện tích hình tròn
+    circumference_circle = 2 * math.pi * radius
+    area_circle = math.pi * radius ** 2
+    print(f"Hình tròn có bán kính {radius}:")
+    print(f"  Chu vi: {circumference_circle}")
+    print(f"  Diện tích: {area_circle}")
+else:
+    print("Bán kính không hợp lệ. Bán kính phải là một số dương.")

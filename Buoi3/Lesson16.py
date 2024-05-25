@@ -1,8 +1,5 @@
-# Nhập điểm của 3 môn
-diem_van = float(input("Nhập điểm môn Văn: "))
-diem_toan = float(input("Nhập điểm môn Toán: "))
-diem_anh = float(input("Nhập điểm môn Anh: "))
-# Tính điểm trung bình
-diem_trung_binh = (diem_van + diem_toan + diem_anh) / 3
-# In kết quả
-print(f"Điểm trung bình của 3 môn là: {diem_trung_binh:.2f}")
+diem_java = float(input("Nhập điểm java  : "))
+diem_python = float(input("Nhập điểm python  : "))
+diem_english = float(input("Nhập điểm english : "))
+trung_binh_tong = (diem_java + diem_python + diem_english) / 3
+print("Trung bình cộng của ba môn là:", trung_binh_tong)
