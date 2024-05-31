@@ -40,32 +40,18 @@ def TongHieuSoChanSoLe ():
     print(f"Tổng các số chẵn: {sum_even}")
     print(f"Tổng các số lẻ: {sum_odd}")
     print(f"Hiệu của tổng các số chẵn và tổng các số lẻ: {difference}")
-
-def SoLuongGaChuot(SoLuong, SoChan):
-    for SoGa in range(SoLuong + 1):
-        SoChuot = SoLuong - SoGa
-        if SoChan == SoGa*2 + SoChuot*4:
-            return SoGa, SoChuot
-            SoLuong = 50
-            SoChan = 100
-            SoGa, SoChuot = SoLuongGaChuot(SoLuong, SoChan)
-            print("Số lượng gà: ",SoGa)
-            print("Số lượng chuột: ",SoChuot)
-def SoLuongChoGa(Hieu, SoChan):
-    for SoGa in range(Hieu, Hieu * 2 + 1):  # Số gà phải lớn hơn hoặc bằng hiệu và trong khoảng hợp lý
-        SoCho = SoGa - Hieu
-        if SoChan == SoGa * 2 + SoCho * 4:
-            return SoGa, SoCho
-            return None  # Trường hợp vô nghiệm
-            Hieu = 72
-            SoChan = 100
-            result = SoLuongChoGa(Hieu, SoChan)
-            if result:
-                SoGa, SoCho = result
-                print("Số lượng gà: ", SoGa)
-                print("Số lượng chó: ", SoCho)
-            else:
-                print("Không có nghiệm thỏa mãn các điều kiện đã cho.")
+def solve_chicken_and_mouse() :
+    for x in range(51):
+        y = 50 - x
+        if 2 * x + 4 * y == 100:
+            return x, y
+        print(solve_chicken_and_mouse())
+def solve_dogs_and_chickens():
+    for x in range(1, 100):
+        y = x - 72
+        if 4 * x + 2 * y == 100 and y > 0:
+            return x, y
+print(solve_dogs_and_chickens())
 def chuyen_doi_nhiet_do():
     print("Chương trình chuyển đổi nhiệt độ")
     print("1. Chuyển đổi từ độ C sang độ F")
@@ -90,18 +76,14 @@ def kiem_tra_nam_nhuan_va_tuoi():
     else:
         print(f"Năm {nam_sinh} không phải là năm nhuận.")
     print(f"Tuổi của bạn là: {tuoi}")
-def  UCLNandBCNN(a,b):
+def ucln_bcnn(a, b):
     x, y = a, b
     while y != 0:
         x, y = y, x % y
     gcd = x
+    # Tính BSCNN từ ƯSCLN và 2 số a, b
     lcm = (a * b) // gcd
     return gcd, lcm
-    a = 15
-    b = 90
-    gcd , lcm = UCLNandBCNN(a,b)
-    print("UCLN : ",gcd)
-    print("BCNN : ",lcm)
 def ThapPhanSangNhiPhan():
     while True:
         print("Chọn chuyển đổi:")
@@ -133,21 +115,25 @@ def ThapPhanSangNhiPhan():
             break
         else:
             print("Lựa chọn không hợp lệ. Vui lòng thử lại")
-def  TimGiaoDiemCuaHaiDuongThang(a1, a2,b1,b2 ) :
-    if a1 == a2:
-        if b1 == b2 :
-            return  "Hai đường thẳng trùng nhau . "
+def giao_diem_duong_thang():
+    """Tìm giao điểm của hai đường thẳng y = a1*x + b1 và y = a2*x + b2."""
+    print("Nhập hệ số cho đường thẳng thứ nhất (y = a1*x + b1):")
+    a1 = float(input("Nhập a1: "))
+    b1 = float(input("Nhập b1: "))
+    print("Nhập hệ số cho đường thẳng thứ hai (y = a2*x + b2):")
+    a2 = float(input("Nhập a2: "))
+    b2 = float(input("Nhập b2: "))
+    # Kiểm tra nếu hai đường thẳng trùng nhau
+    if a1 == a2 and b1 == b2:
+        print("Hai đường thẳng trùng nhau.")
+    # Kiểm tra nếu hai đường thẳng song song (không có giao điểm)
+    elif a1 == a2:
+        print("Hai đường thẳng song song, không có giao điểm.")
     else:
-        return "Hai đường thẳng song song và không có giao điểm "
-    x = (b2 - b1) / (a1 -  a2)
-    y =   a1 * x + b1
-    return  (x , y)
-    printf(f"Nhâp toạ độ a1: {a1}")
-    printf(f"Nhâp toạ độ a2: {a2}")
-    printf(f"Nhâp toạ độ b1: {b1}")
-    printf(f"Nhâp toạ độ b2: {b2}")
-    Ketqua  = TimGiaoDiemCuaHaiDuongThang(a1, a2, b1, b2)
-    print(f"Giao điểm của hai đường thẳng là : {Ketqua}")
+        # Tính tọa độ giao điểm
+        x = (b2 - b1) / (a1 - a2)
+        y = a1 * x + b1
+        print(f"Giao điểm của hai đường thẳng là: x = {x}, y = {y}")
 def TimSoXuatHienNhieuNhat_SoXuatHienItNhat():
     danh_sach = list(map(int, input("Nhập các số nguyên, cách nhau bởi dấu cách: ").split()))
     if not danh_sach:
@@ -214,8 +200,9 @@ def TinhTongTichTrungBinh():
     print(f"Tổng của các số: {tong}")
     print(f"Tích của các số: {tich}")
     print(f"Trung bình của các số: {trung_binh:.2f}")
-def doc_so(num):
-    switcher = {
+so = int(input("Nhập một số từ 0 đến 9: "))
+def doc_so(x):
+    return {
         0: "Không",
         1: "Một",
         2: "Hai",
@@ -226,24 +213,8 @@ def doc_so(num):
         7: "Bảy",
         8: "Tám",
         9: "Chín"
-    }
-    return switcher.get(num, "Số không hợp lệ")
-
-def main():
-    while True:
-        print("""
-        MENU
-        1. Đọc số từ 0 đến 9
-        0. Thoát
-        """)
-        choice = input("Nhập lựa chọn của bạn: ")
-        if choice == '1':
-            num = int(input("Nhập một số từ 0 đến 9: "))
-            print(f"Số {num} đọc là: {doc_so(num)}")
-        elif choice == '0':
-            break
-        else:
-            print("Lựa chọn không hợp lệ. Vui lòng chọn lại.")
+    }.get(x, "Số không hợp lệ")
+    print(doc_so(so))
 def giai_phuong_trinh_bac_nhat():
     print("Giải phương trình bậc nhất dạng ax + b = 0")
     a = float(input("Nhập hệ số a: "))
@@ -271,7 +242,22 @@ def giai_phuong_trinh_bac_hai():
         x1 = (-b + math.sqrt(delta)) / (2*a)
         x2 = (-b - math.sqrt(delta)) / (2*a)
         print(f"Phương trình có hai nghiệm phân biệt: x1 = {x1}, x2 = {x2}")
-def main() :
+def chuyen_doi_don_vi():
+    print("Chương trình chuyển đổi đơn vị:")
+    print("1. Chuyển đổi từ feet sang mét")
+    print("2. Chuyển đổi từ mét sang feet")
+    lua_chon = input("Nhập lựa chọn của bạn (1 hoặc 2): ")
+    if lua_chon == '1':
+        feet = float(input("Nhập giá trị feet: "))
+        meters = feet * 0.3048
+        print(f"{feet} feet = {meters:.2f} mét")
+    elif lua_chon == '2':
+        meters = float(input("Nhập giá trị mét: "))
+        feet = meters * 3.28084
+        print(f"{meters} mét = {feet:.2f} feet")
+    else:
+        print("Lựa chọn không hợp lệ. Vui lòng chọn 1 hoặc 2.")
+def   main() :
     while True:
         print("""
         MENU
@@ -281,8 +267,8 @@ def main() :
         4.Tính số lượng Chó và Gà biết có Hiệu giữa chúng là 72 con và có 100 chân với Số Gà nhiều hơn Chó.
         5 chuyển đổi nhiệt độ 
         6 Kiểm tra xem một năm sinh của bạn có phải là năm nhuận hay không và cho biết tuổi của bạn
-        7  Tìm ước số chung lớn nhất và bội số chung nhỏ nhất của 2 số * 
-        8 Chuyển đổi giữa hệ thập phân sang nhị phân, và ngược lại. *
+        7 Tìm ước số chung lớn nhất và bội số chung nhỏ nhất của 2 số.
+        8Chuyển đổi giữa hệ thập phân sang nhị phân, và ngược lại. *
         9  Viết chương trình tìm giao điểm của 2 đường thẳng
         10 Tìm số xuất hiện nhiều và ít nhất trong một danh sách. *
         11 Tìm số lớn thứ 2 và nhỏ thứ 2 trong một danh sách *
@@ -291,27 +277,28 @@ def main() :
         14.  Viết chương trình đọc số, ví dụ nhập 1 hiển thị là Một (sử dụng switch).
         15 Viết chương trình để giải bậc nhất
         16  Viết chương trình để giải phương trình bậc 2
+        17  Chuyển đổi đơn vị 
         0. Thoát
         """)
         choice = input("Nhập lựa chọn của bạn: ")
         if choice == '1':
             mua_ga()
         elif choice == '2':
-             TongHieuSoChanSoLe()
+                 TongHieuSoChanSoLe()
         elif choice == '3':
-            SoLuongGaChuot()
+                 solve_chicken_and_mouse()
         elif choice == '4' :
-            SoLuongChoGa()
+                solve_dogs_and_chickens()
         elif choice == "5" :
            chuyen_doi_nhiet_do()
         elif choice == "6" :
            kiem_tra_nam_nhuan_va_tuoi()
         elif choice =="7" :
-            UCLNandBCNN()
+            ucln_bcnn()
         elif choice =="8" :
             ThapPhanSangNhiPhan()
         elif choice =="9" :
-            TimGiaoDiemCuaHaiDuongThang()
+            giao_diem_duong_thang()
         elif choice == "10" :
             TimSoXuatHienNhieuNhat_SoXuatHienItNhat()
         elif choice == "11" :
@@ -326,6 +313,8 @@ def main() :
             giai_phuong_trinh_bac_nhat()
         elif choice == "16" :
             giai_phuong_trinh_bac_hai()
+        elif choice == "17" :
+            chuyen_doi_don_vi()
         elif choice == '0':
             break
         else:
