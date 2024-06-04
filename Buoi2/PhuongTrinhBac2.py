@@ -1,5 +1,4 @@
 import math
-
 print("Giải Phương Trình Bậc Hai")
 a = float(input("Nhập a: "))
 b = float(input("Nhập b: "))

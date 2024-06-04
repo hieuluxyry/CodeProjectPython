@@ -40,18 +40,6 @@ def TongHieuSoChanSoLe ():
     print(f"Tổng các số chẵn: {sum_even}")
     print(f"Tổng các số lẻ: {sum_odd}")
     print(f"Hiệu của tổng các số chẵn và tổng các số lẻ: {difference}")
-def solve_chicken_and_mouse() :
-    for x in range(51):
-        y = 50 - x
-        if 2 * x + 4 * y == 100:
-            return x, y
-        print(solve_chicken_and_mouse())
-def solve_dogs_and_chickens():
-    for x in range(1, 100):
-        y = x - 72
-        if 4 * x + 2 * y == 100 and y > 0:
-            return x, y
-print(solve_dogs_and_chickens())
 def chuyen_doi_nhiet_do():
     print("Chương trình chuyển đổi nhiệt độ")
     print("1. Chuyển đổi từ độ C sang độ F")
@@ -262,19 +250,16 @@ def   main() :
         print("""
         MENU
         1. mua gà 
-        2.   Tính Tổng và Hiệu của các số chắn và số lẻ được nhập từ bàn phím với 10 số.
-        3 Tính số lượng gà và chuột biết có tổng 50 con và 100 chân.
-        4.Tính số lượng Chó và Gà biết có Hiệu giữa chúng là 72 con và có 100 chân với Số Gà nhiều hơn Chó.
+        2.   Tính Tổng và Hiệu của các số chắn và số lẻ được nhập từ bàn phím với 10 số.0
         5 chuyển đổi nhiệt độ 
-        6 Kiểm tra xem một năm sinh của bạn có phải là năm nhuận hay không và cho biết tuổi của bạn
-        7 Tìm ước số chung lớn nhất và bội số chung nhỏ nhất của 2 số.
+        6 Kiểm tra xem một năm sinh của bạn có phải là năm nhuận hay không và cho biết tuổi của bạn8
+        
         8Chuyển đổi giữa hệ thập phân sang nhị phân, và ngược lại. *
         9  Viết chương trình tìm giao điểm của 2 đường thẳng
         10 Tìm số xuất hiện nhiều và ít nhất trong một danh sách. *
         11 Tìm số lớn thứ 2 và nhỏ thứ 2 trong một danh sách *
         12   Tính toán diện tích và chu vi các hình học khác như hình thang, hình bình hành.
         13 Viết chương trình tính tổng, tích, trung bình của các số trong một danh sách. *
-        14.  Viết chương trình đọc số, ví dụ nhập 1 hiển thị là Một (sử dụng switch).
         15 Viết chương trình để giải bậc nhất
         16  Viết chương trình để giải phương trình bậc 2
         17  Chuyển đổi đơn vị 
@@ -285,16 +270,10 @@ def   main() :
             mua_ga()
         elif choice == '2':
                  TongHieuSoChanSoLe()
-        elif choice == '3':
-                 solve_chicken_and_mouse()
-        elif choice == '4' :
-                solve_dogs_and_chickens()
         elif choice == "5" :
            chuyen_doi_nhiet_do()
         elif choice == "6" :
            kiem_tra_nam_nhuan_va_tuoi()
-        elif choice =="7" :
-            ucln_bcnn()
         elif choice =="8" :
             ThapPhanSangNhiPhan()
         elif choice =="9" :
@@ -307,8 +286,6 @@ def   main() :
             tinh_dien_tich_va_chu_vi_hinh_hoc()
         elif choice =="13" :
             TinhTongTichTrungBinh()
-        elif choice =="14" :
-            doc_so()
         elif choice == "15" :
             giai_phuong_trinh_bac_nhat()
         elif choice == "16" :

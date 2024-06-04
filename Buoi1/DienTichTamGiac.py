@@ -1,6 +1,5 @@
 #Nhập ba cạnh tam giác từ bàn phím
 import math
-
 a = float(input("Enter edge a : "))
 b = float(input("Enter edge b : "))
 c = float(input("Enter edge c : "))

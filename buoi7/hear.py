@@ -16,6 +16,7 @@ for _ in range(200):
     heart.forward(2)
 heart.forward(230)
 heart.end_fill()
+
 heart.penup()
 heart.goto(220, 0)
 heart.pendown()
@@ -34,4 +35,5 @@ for _ in range(200):
 heart.forward(230)
 heart.end_fill()
 heart.end_fill()
+heart.hideturtle()
 window.mainloop()
