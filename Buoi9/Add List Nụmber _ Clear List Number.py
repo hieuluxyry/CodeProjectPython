@@ -1,7 +1,7 @@
 from tkinter import *
 window = Tk()
 window.geometry('500x500')
-window.title("ListNumber")
+window.title("Add List Nụmber _ Clear List Number")
 def themList():
     number = entry.get()
     if number.isdigit():
